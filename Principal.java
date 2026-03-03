@@ -1,24 +1,26 @@
 import java.util.Scanner;
 
-public class Principal {
+public class Principal{
+    
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-        metodos m = new metodos();
+        
+    
 
-         System.out.println("¿Cuántas filas tendrá?");
-        int filas = Integer.parseInt(teclado.nextLine());
 
-        System.out.println("¿Cuántas columnas tendrá?");
-        int columnas = Integer.parseInt(teclado.nextLine());
+    Scanner teclado = new Scanner(System.in);
+    metodos m = new metodos();
 
-        objProductosuper[][] matriz = new objProductosuper[filas][columnas];
+    System.out.println("¿Cuantas filas tendra?");
+    int filas = Integer.parseInt(teclado.nextLine());
 
-        matriz = m.registrarProductos(matriz);
+    System.out.println("¿Cuantas columnas tendra?");
+    int columnas = Integer.parseInt(teclado.nextLine());
 
-        objProductosuper disponibles = m.encontrarDisponibles(matriz);
+    objProductosuper[][] matriz = new objProductosuper[filas][columnas];
 
-        System.out.println("Productos true");
-        System.out.println(disponibles);
+    matriz = m.registrarProductos(matriz);
 
+    System.out.println("\nProductos disponibles:");
+    m.mostrarDisponibles(matriz);
     }
 }
